@@ -1,0 +1,95 @@
+/* Marka rengi mobile/src/theme.ts (primary #005c55) ile aynı köke dayanıyor;
+   geri kalan token seti bu sürüm için kurumsal/profesyonel bir palet olarak
+   genişletildi. */
+:root {
+  --color-primary: #005c55;
+  --color-primary-dark: #00443f;
+  --color-primary-tint: #e3f2ef;
+  --color-on-primary: #ffffff;
+  --color-background: #f9fbfa;
+  --color-surface-alt: #eef5f3;
+  --color-surface-card: #ffffff;
+  --color-on-surface: #10201d;
+  --color-on-surface-variant: #52645f;
+  --color-border-subtle: #e1e9e6;
+  --color-secondary: #006399;
+  --color-accent-warning: #ea580c;
+
+  --gradient-primary: linear-gradient(135deg, #005c55 0%, #0f8a7a 100%);
+  --gradient-dark: linear-gradient(160deg, #062b27 0%, #0a1815 100%);
+  --shadow-sm: 0 2px 8px rgba(16, 32, 29, 0.06);
+  --shadow-md: 0 8px 24px rgba(16, 32, 29, 0.08);
+  --shadow-primary: 0 10px 30px rgba(0, 92, 85, 0.22);
+
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  color-scheme: light dark;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-primary: #6fd6c8;
+    --color-primary-dark: #4fb8aa;
+    --color-primary-tint: #103330;
+    --color-on-primary: #00302b;
+    --color-background: #0b1211;
+    --color-surface-alt: #101a18;
+    --color-surface-card: #141e1c;
+    --color-on-surface: #e7f0ee;
+    --color-on-surface-variant: #9db3ae;
+    --color-border-subtle: #223330;
+    --color-secondary: #7bc2ff;
+
+    --gradient-primary: linear-gradient(135deg, #0f8a7a 0%, #6fd6c8 100%);
+    --gradient-dark: linear-gradient(160deg, #000000 0%, #0a1815 100%);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-primary: 0 10px 30px rgba(111, 214, 200, 0.18);
+  }
+}
+
+:root[data-theme='dark'] {
+  --color-primary: #6fd6c8;
+  --color-primary-dark: #4fb8aa;
+  --color-primary-tint: #103330;
+  --color-on-primary: #00302b;
+  --color-background: #0b1211;
+  --color-surface-alt: #101a18;
+  --color-surface-card: #141e1c;
+  --color-on-surface: #e7f0ee;
+  --color-on-surface-variant: #9db3ae;
+  --color-border-subtle: #223330;
+  --color-secondary: #7bc2ff;
+
+  --gradient-primary: linear-gradient(135deg, #0f8a7a 0%, #6fd6c8 100%);
+  --gradient-dark: linear-gradient(160deg, #000000 0%, #0a1815 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-primary: 0 10px 30px rgba(111, 214, 200, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, p, ul, ol {
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
