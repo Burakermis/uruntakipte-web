@@ -53,6 +53,17 @@ export function PrivacyPage() {
               </tr>
               <tr>
                 <td data-label="Veri">
+                  <strong>Bildirim geçmişi</strong>
+                </td>
+                <td data-label="Ne için">
+                  Sana gönderilen fiyat/stok bildirimlerinin başlığı, metni, ürün bağlantısı ve zamanı. Uygulamadaki “Bildirim
+                  Geçmişi” ekranında göstermek için. Kısa ömürlüdür: <strong>30 gün</strong> sonra otomatik silinir ve en fazla son
+                  100 kayıt tutulur.
+                </td>
+                <td data-label="Nerede">Sunucumuzda</td>
+              </tr>
+              <tr>
+                <td data-label="Veri">
                   <strong>Bildirim jetonu</strong> ve platform (iOS/Android)
                 </td>
                 <td data-label="Ne için">Telefonuna anlık bildirim (push) gönderebilmek için. Bildirimleri uygulamadan kapattığında jetonun silinir.</td>
@@ -158,6 +169,10 @@ export function PrivacyPage() {
           </li>
           <li>
             <strong>Bildirim jetonu:</strong> bildirimleri kapatana ya da silme talebinde bulunana kadar.
+          </li>
+          <li>
+            <strong>Bildirim geçmişi:</strong> 30 gün sonra otomatik silinir; kullanıcı başına en fazla 100 kayıt tutulur.
+            Uygulamadaki “Bildirim Geçmişi” ekranından istediğin zaman tamamını silebilirsin.
           </li>
           <li>
             <strong>Fiyat geçmişi:</strong> fiyat veya stok değişmeyen eski kayıtlar 90 gün sonra temizlenir.

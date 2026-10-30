@@ -19,11 +19,12 @@ import { PRIVACY_PATH, TERMS_PATH } from './legal/company';
 import './App.css';
 import './legal/legal.css'; // .footer-links (altbilgideki yasal bağlantılar)
 
-// Uygulama henüz mağazalarda yayınlanmadı (bkz. mobile/app.json ->
-// extra.eas.projectId hâlâ "REPLACE_WITH_EAS_PROJECT_ID"). Yayınlanınca bu
-// iki linki gerçek App Store / Play Store adresleriyle değiştirin.
-const APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.uruntakipte.app';
+// Mağaza bağlantıları kodu değiştirmeden verilir: yayında VITE_APP_STORE_URL ve VITE_PLAY_STORE_URL ortam
+// değişkenleriyle derleyin (bkz. web/README.md). Değer yoksa App Store için yer tutucu kalır (uygulama henüz
+// yayınlanmadı); Play Store adresi paket adından türetilir.
+const APP_STORE_URL = import.meta.env.VITE_APP_STORE_URL || 'https://apps.apple.com/app/id0000000000';
+const PLAY_STORE_URL =
+  import.meta.env.VITE_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.uruntakipte.app';
 
 const SUPPORTED_BRANDS = [
   'Zara',
