@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+# Aynı dal için yeni bir push gelince eski koşuyu iptal et.
+concurrency:
+  group: web-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # tsc -b (tip denetimi) + vite build (3 sayfa: ana sayfa, /gizlilik/, /kosullar/)
+      - run: npm run build
+        env:
+          SITE_URL: https://example.com # yalnızca sitemap/canonical üretiminin derlemeyi bozmadığını denemek için
+
+      - name: Çıktıyı doğrula (sayfalar, robots, sitemap, 404)
+        run: |
+          for f in index.html gizlilik/index.html kosullar/index.html robots.txt sitemap.xml 404.html og-image.png; do
+            test -s "dist/$f" || { echo "EKSİK: dist/$f"; exit 1; }
+          done
+          grep -q 'rel="canonical"' dist/gizlilik/index.html
+          grep -q 'og:title' dist/index.html
