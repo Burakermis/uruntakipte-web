@@ -150,7 +150,7 @@ export function PrivacyPage() {
       <Section id="saklama" title="5. Verileri ne kadar süre saklıyoruz?">
         <ul>
           <li>
-            <strong>Hesap kimliği ve takip listen:</strong> uygulamayı kullandığın sürece. Silme talebinde (bkz. bölüm 7) silinir.
+            <strong>Hesap kimliği ve takip listen:</strong> uygulamayı kullandığın sürece. Uygulamadan hesabını sildiğinde hemen silinir (bkz. bölüm 7).
           </li>
           <li>
             <strong>Takipten çıkardığın ürünler:</strong> ücretsiz plandaki bekleme kuralını (yeni ürün eklemeden önceki 48 saat)
@@ -170,7 +170,11 @@ export function PrivacyPage() {
             kendi politikalarına tabidir.
           </li>
         </ul>
-        <p>Uygulamayı cihazından silmek sunucudaki verileri kendiliğinden silmez; bunun için bölüm 7'ye bak.</p>
+        <p>
+          Uygulamayı cihazından kaldırmak sunucudaki verileri kendiliğinden silmez; bunun için önce uygulamadan hesabını sil
+          (bölüm 7). Silinen hesabın rastgele kimliği (kişisel veri içermez) yeniden oluşturulmasın diye “silindi” kaydı olarak
+          saklanır.
+        </p>
       </Section>
 
       <Section id="guvenlik" title="6. Verilerini nasıl koruyoruz?">
@@ -199,12 +203,21 @@ export function PrivacyPage() {
           <li>İşlenen verilerin otomatik sistemlerle analiz edilmesi sonucu aleyhine bir sonuç çıkmasına itiraz etme,</li>
           <li>Kanuna aykırı işleme nedeniyle zarara uğrarsan zararın giderilmesini talep etme.</li>
         </ul>
-        <h3>Verilerini silmek ve talepte bulunmak</h3>
+        <h3>Hesabını ve verilerini uygulamadan sil</h3>
         <p>
-          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> adresine yazman yeterli. Talebini hızlı doğrulayabilmemiz için
+          En hızlı yol uygulamanın içinde: <strong>Ayarlar → Veriler → Hesabımı ve Verilerimi Sil</strong>. Onayladığında takip
+          listen, bildirim jetonların ve plan kaydın sunucularımızdan <strong>hemen ve kalıcı olarak</strong> silinir; işlem geri
+          alınamaz. Ardından uygulama yeni, boş bir hesapla açılır. Silinen hesabın rastgele kimliği (içinde kişisel bilgi
+          yoktur) yalnızca eski oturum anahtarının hesabı yeniden oluşturamaması için “silindi” kaydı olarak saklanır. Silme
+          sırasında RevenueCat'teki müşteri kaydın için de silme isteği gönderilir.
+        </p>
+        <h3>Diğer talepler</h3>
+        <p>
+          Düzeltme, bilgi alma ya da silme dışındaki talepler için (veya uygulamaya erişemiyorsan)
+          <a href={`mailto:${CONTACT_EMAIL}`}> {CONTACT_EMAIL}</a> adresine yazabilirsin. Talebini hızlı doğrulayabilmemiz için
           uygulamadaki <strong>Ayarlar</strong> ekranında görünen <strong>Cihaz ID</strong>'ni (kopyalayabilirsin) ve talebinin
           içeriğini belirt; gerekirse kimliği doğrulamak için ek bilgi isteyebiliriz. Talebini en geç <strong>30 gün</strong>{' '}
-          içinde yanıtlarız. Silme talebinde hesap kimliğin, takip listen ve bildirim jetonların sunucumuzdan kaldırılır.
+          içinde yanıtlarız.
         </p>
         <p>
           Abonelik: verilerini silmen aboneliğini iptal etmez. Aboneliği Apple/Google hesabından iptal etmelisin (bkz.{' '}
