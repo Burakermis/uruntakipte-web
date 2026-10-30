@@ -15,7 +15,9 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import appIcon from './assets/app-icon.png';
 import { useTheme } from './useTheme';
+import { PRIVACY_PATH, TERMS_PATH } from './legal/company';
 import './App.css';
+import './legal/legal.css'; // .footer-links (altbilgideki yasal bağlantılar)
 
 // Uygulama henüz mağazalarda yayınlanmadı (bkz. mobile/app.json ->
 // extra.eas.projectId hâlâ "REPLACE_WITH_EAS_PROJECT_ID"). Yayınlanınca bu
@@ -325,6 +327,10 @@ function App() {
           <img src={appIcon} alt="" className="brand-icon" />
           <span className="brand-name">ÜrünTakipte</span>
         </div>
+        <nav className="footer-links" aria-label="Yasal">
+          <a href={PRIVACY_PATH}>Gizlilik Politikası</a>
+          <a href={TERMS_PATH}>Kullanım Koşulları</a>
+        </nav>
         <p>&copy; {new Date().getFullYear()} ÜrünTakipte. Tüm hakları saklıdır.</p>
       </footer>
     </div>
